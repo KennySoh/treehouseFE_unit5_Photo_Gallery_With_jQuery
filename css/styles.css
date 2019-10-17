@@ -59,6 +59,10 @@ a {
 	margin-left:5%;
 	margin-right:5%;
 }
+img.mfp-img {
+    width: 100%;
+    max-width: 900px;
+}
 /*Media Queries*/
 @media (min-width:666px){
   .mfp-bottom-bar{
@@ -75,6 +79,6 @@ a {
 
 @media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px){
   .mfp-img-mobile .mfp-bottom-bar {
-    margin-top:0px; 
+    margin-top:0px;
   }
 }
