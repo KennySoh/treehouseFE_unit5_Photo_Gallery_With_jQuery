@@ -64,6 +64,13 @@ img.mfp-img {
     max-width: 900px;
 }
 /*Media Queries*/
+
+$breakpoints:(
+	'xs':575px,
+	'sm':600px,
+	'med;:768px,
+	'lg':992px,
+);
 @media (min-width:666px){
   .mfp-bottom-bar{
   	width:600px;
