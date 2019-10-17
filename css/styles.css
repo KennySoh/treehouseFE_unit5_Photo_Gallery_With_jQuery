@@ -1,0 +1,80 @@
+/*Smaller than 769px will use the rest of the css*/
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial;
+	line-height: 1.4;
+	color: #585858;
+  max-width: 900px;
+
+}
+
+h2,
+h3 {
+	margin-top: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* =================================
+  Base Layout Styles
+==================================== */
+.m-center{
+	margin:0 auto;
+}
+#myInput {
+  display: block;
+  width: 80%;
+  max-width: 500px;
+  margin: 10px auto;
+  border: solid #d0d0d0 2px;
+  border-radius: 5px;
+  padding: 10px;
+  color:#d0d0d0;
+}
+.popup-gallery{
+  display:inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+.popup-gallery a{
+	padding:8px 10px;
+}
+
+/* Rewriting magnific css*/
+.mfp-title{
+  font-size: 12px;
+  padding: 0px;
+  margin-top:1rem;
+}
+.mfp-bottom-bar{
+	width:90%;
+	margin-left:5%;
+	margin-right:5%;
+}
+/*Media Queries*/
+@media (min-width:666px){
+  .mfp-bottom-bar{
+  	width:600px;
+  	left:50%;
+    margin-left:-300px;
+  }
+
+  .mfp-title{
+    font-size: 15px;
+    line-height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px){
+  .mfp-img-mobile .mfp-bottom-bar {
+    margin-top:0px; 
+  }
+}

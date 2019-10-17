@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- MetaTags for seo/ Css stylesheets-->
+    <meta charset="utf-8">
+    <title>An Interactive Photo Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="magnific/magnific-popup.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+  <body class="m-center">
+    <input id="myInput" type="text" placeholder="Search..">
+    <div class="popup-gallery" id="popup-gallery1">
+      <a href="photos/01.jpg" title="01"> <img src="photos/thumbnails/01.jpg"></a>
+      <a href="photos/02.jpg" title="02"> <img src="photos/thumbnails/02.jpg"></a>
+      <a href="photos/03.jpg" title="03"> <img src="photos/thumbnails/03.jpg"></a>
+      <a href="photos/04.jpg" title="04"> <img src="photos/thumbnails/04.jpg"></a>
+      <a href="photos/05.jpg" title="05"> <img src="photos/thumbnails/05.jpg"></a>
+      <a href="photos/06.jpg" title="06"> <img src="photos/thumbnails/06.jpg"></a>
+      <a href="photos/07.jpg" title="07"> <img src="photos/thumbnails/07.jpg"></a>
+      <a href="photos/08.jpg" title="08"> <img src="photos/thumbnails/08.jpg"></a>
+      <a href="photos/09.jpg" title="09"> <img src="photos/thumbnails/09.jpg"></a>
+      <a href="photos/10.jpg" title="10"> <img src="photos/thumbnails/10.jpg"></a>
+      <a href="photos/11.jpg" title="11"> <img src="photos/thumbnails/11.jpg"></a>
+      <a href="photos/12.jpg" title="12"> <img src="photos/thumbnails/12.jpg"></a>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous">
+    </script>
+  	<script src="magnific/jquery.magnific-popup.min.js"></script>
+    <script>
+      var imageCaption={
+      	'01':"What a hot Day!, It was my first day on the summer farm. Sweating like a pig, in this hot mexican weather.Managed to get my first harvest in, i can collect this potatos and vegetables all day long $$",
+        '02':"The Lake was so calm",
+        '03':"Greenary Environment, greens",
+        '04':"Ice cold alantic oceans",
+        '05':"Great Mountain HIKE!",
+        '06':"japanese Gardens",
+        '07':"Surreal isolated greens",
+        '08':"Dessert, snakes, lizards",
+        '09':"Lonely garden passage",
+        '10':"Ocean 13",
+        '11':"Cave looking out",
+        '12':"Alaska"
+        };
+
+      $(document).ready(function() {
+      	$('.popup-gallery').magnificPopup({
+      		delegate: 'a',
+      		type: 'image',
+      		tLoading: 'Loading image #%curr%...',
+      		mainClass: 'mfp-img-mobile',
+      		gallery: {
+      			enabled: true,
+      			navigateByImgClick: true,
+      			preload: [0,1], // Will preload 0 - before current, and 1 after the current image
+            tCounter: ''
+      		},
+      		image: {
+      			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+      			titleSrc: function(item) {
+      				return imageCaption[item.el.attr('title')];
+      			},
+            markup: '<div class="mfp-figure">'+
+                      '<div class="mfp-img"></div>'+
+                      '<div class="mfp-bottom-bar">'+
+                        '<div class="mfp-title"></div>'+
+                      '</div>'+
+                    '</div>',
+      		}
+      	});
+      });
+
+      /*--------------
+      Search Filter for images captions, Hide image caption that does not match
+      Input: dictionary of imageCaption, listOfA in #popup-gallery1, input in #myInput
+      Output: Changes display of filtered a to none;
+      -----------------*/
+      function myFunction(imageCaption) {
+        // Declare variables
+        var input,filter;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        listOfA = document.getElementById("popup-gallery1").getElementsByTagName("a");;
+
+        // Loop through all image captions, hide those that doesnt fit
+        for (i = 0; i < listOfA.length; i++) {
+          if(imageCaption[listOfA[i].title].toUpperCase().includes(filter)){
+              listOfA[i].style.display = "";
+          } else {
+              listOfA[i].style.display = "none";
+          }
+        }
+        return null;
+      }
+
+      //calling Search filter on input event change
+      $('#myInput').on('input', function() {
+          myFunction(imageCaption);
+      });
+    </script>
+  </body>
+</html>
