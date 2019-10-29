@@ -13,5 +13,14 @@ To explore the project visit the Github Page: https://kennysoh.github.io/treehou
 
 ## A sample of the project
 
+| Photo Gallery        |
+| ------------- |
+|![images](https://github.com/KennySoh/treehouseFE_unit5_Photo_Gallery_With_jQuery/blob/master/sample-pic1.png)
 
-|![images](https://github.com/KennySoh/treehouseFE_unit5_Photo_Gallery_With_jQuery/blob/master/sample-pic.png) |
+| Lightbox jQuery Plugin |
+| ------------- |
+|![images](https://github.com/KennySoh/treehouseFE_unit5_Photo_Gallery_With_jQuery/blob/master/sample-pic2.png)
+
+| Content Filtering JS Script |
+| ------------- |
+|![images](https://github.com/KennySoh/treehouseFE_unit5_Photo_Gallery_With_jQuery/blob/master/sample-pic3.png)|
